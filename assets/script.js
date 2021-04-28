@@ -31,3 +31,13 @@ Array.from(rows).forEach(row => {
 function setColor(element, color) {
     element.style.backgroundColor = color;
 }
+
+var saveBtn = $('.row').children('.btn');
+
+saveBtn.click(function(event) {
+    event.preventDefault();
+    var textInput = $(this.parentNode).children('.description').attr('id');
+    var inputToStorage = $(this.parentNode).children('.description').val();
+    localStorage.setItem(textInput, inputToStorage);
+})
+
